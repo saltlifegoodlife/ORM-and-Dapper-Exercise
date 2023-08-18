@@ -39,11 +39,20 @@ namespace ORM_Dapper
 
             var products = productsRepo.GetAllProducts();
             Console.WriteLine("-------------------------------------");
+            Console.WriteLine("Enter new Product Name:");
+            var newProdName = Console.ReadLine();
+            Console.WriteLine("Enter new Product Name:");
+            var newProdPrice = decimal.Parse(Console.ReadLine());
+            Console.WriteLine("Enter new Product Name:");
+            var newProdCatID = int.Parse(Console.ReadLine());
+            productsRepo.CreateProduct(newProdName, newProdPrice, newProdCatID);
+            products = productsRepo.GetAllProducts();
             foreach (var product in products)
             {
                 Console.WriteLine($"{product.ProductID}, {product.Name}, {product.Price}, {product.CategoryID}");
 
             }
+
 
 
 
